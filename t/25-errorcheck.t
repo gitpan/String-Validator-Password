@@ -27,13 +27,15 @@ is ( $Validator->Check( $string, $string ), 0,
 $string = qq /aBcD^&*123/ ;
 is ( $Validator->Check( $string, $string ), 2,
 	"$string has 10 chars all types, 3 punct, FAIL with 2 Errors." ) ;
-like( 	$Validator->errstr(),
-		qr/Password Length of 10 Does not meet requirement/,
+note( $Validator->Errstr() ) ;
+
+like( 	$Validator->Errstr(),
+		qr/Length of 10 Does not meet requirement/,
 		'The error string should tell us it is too long.') ;
-like( 	$Validator->errstr(),
+like( 	$Validator->Errstr(),
 		qr/punct is limited to fewer than 3/,
 		'punct is limited to fewer than 3' ) ;
-is( $Validator->errcnt() , 2, 'Check the errcnt method for 2 errors.') ;
+is( $Validator->Errcnt() , 2, 'Check the errcnt method for 2 errors.') ;
 
 $Validator = String::Validator::Password->new(
 	min_types => 2,
