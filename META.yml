@@ -18,5 +18,6 @@ no_index:
     - t
     - inc
 requires:
+  String::Validator::Common: 0.93
   Test::More: 0
-version: 0.93
+version: 0.94

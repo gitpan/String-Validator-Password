@@ -32,10 +32,11 @@
       },
       "runtime" : {
          "requires" : {
+            "String::Validator::Common" : "0.93",
             "Test::More" : 0
          }
       }
    },
    "release_status" : "stable",
-   "version" : "0.93"
+   "version" : "0.94"
 }
